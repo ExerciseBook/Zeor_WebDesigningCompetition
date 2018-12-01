@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1" charset="utf-8">
+	<meta name="description" content="珞珈印象"/>
+	<link href="css/binkic.css" rel="stylesheet" type="text/css"/>
+	<link href="css/main.css" rel="stylesheet" type="text/css"/>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/anime.js"></script>
+	<script src="js/binkic.js"></script>
+	<script src="js/main.js"></script>
+	<title>珞珈印象</title>
+	<script>
+        //计时的入场动画
+        var startTime = new Date().getTime();
+
+        window.onload = function(){
+            var timeSpan = new Date().getTime() - startTime;
+
+            //文字动画
+            var enter_word1 = anime({
+                targets: '#enter_word1 .lines path',
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'easeInOutSine',
+                duration: 2000,
+                delay: function(el, i) { return i * 100 },
+                direction: 'alternate',
+                //loop: true
+            });
+
+            //加载完成后等待2000ms，入场图淡出
+            if(timeSpan >= 2000) {
+                $(function() {
+                    $(".enter").fadeOut(500);
+                    setTimeout(function(){
+                        $("main").css("display","block");
+                        $("header").css("display","block");
+                        $("footer").css("display","block");
+                        $("body").css("overflow","visible");
+                    }, 500);
+                })
+            } else {
+                setTimeout(function(){
+                    $(function() {
+                        $(".enter").fadeOut(500);
+                        setTimeout(function(){
+                            $("main").css("display","block");
+                            $("header").css("display","block");
+                            $("footer").css("display","block");
+                            $("body").css("overflow","visible");
+                        }, 500);
+                    })
+                }, 2000 - timeSpan);
+            }
+        }
+	</script>
+</head>
+
+<body>
+<!--入场动画-->
+<div class="enter">
+	<div class="enterimg">
+	<div class="enter_logo"></div>
+	<div id="enter_word1" class="enter_word">
+		<svg viewBox="0 0 480 320">
+			<g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="0.8" class="lines">
+	<path stroke="white" d="M56,30.1c0.3,0.2,0.5,0.3,0.5,0.4c0,0.1-0.1,0.2-0.4,0.4l-1.3,0.8v27c0,0.7,0.1,1.9,0.1,2.6
+		c0,0.8-1.9,1.4-2.1,1.4c-0.3,0-0.4-0.3-0.4-0.8v-4.6l-27.7,1.1l-1.3,1.8c-0.1,0.2-0.2,0.3-0.4,0.3s-0.3-0.1-0.6-0.3l-2.8-2.5
+		l2.5-1.7V31.9c0-1.1,0-1.9-0.1-3.3l3.8,2.3c0.3,0.2,0.5,0.3,0.5,0.4s-0.1,0.3-0.4,0.5l-1.5,1v24.7l12.9-0.5V23.7c0-1.9,0-3-0.1-4.4
+		l4.1,2c0.3,0.1,0.5,0.2,0.5,0.4c0,0.1-0.1,0.2-0.5,0.4l-1.7,1v33.7l12.8-0.6V31.8c0-1.3,0-2.3-0.1-3.8L56,30.1z"/>
+	<path stroke="white" d="M81.8,33c0.2,0.1,0.3,0.2,0.3,0.3c0,0.1-0.1,0.2-0.5,0.2c-0.9,0.1-1.5,0.9-2,2.2c-3.5,10.3-8.7,18.2-16,23.9
+		l-0.4-0.5c7.6-7.8,11.8-15.7,14.3-25.4h-9.2c-1,0-2.4,0.2-3.2,0.5l-1.3-1.8c1.2,0.1,2.4,0.2,3.5,0.2h10l1.4-2.2L81.8,33z
+		 M108.1,56.5c-0.6,0-1.2-0.1-1.6-0.1c-1.8,0-2.9,0.5-3.5,1.3c-0.1,0.2-0.2,0.3-0.4,0.3c-0.1,0-0.2,0-0.4-0.2
+		C93.7,50,89.6,42.9,86.5,27.8V58c0,3.7-0.5,4.9-3.5,5.8c-0.1,0-0.2,0-0.2,0c-0.2,0-0.2-0.1-0.3-0.3c-0.1-1.4-1.1-2.3-6.1-3.6
+		l0.1-0.8c3.1,0.6,5,1,6.1,1c1.6,0,1.7-0.7,1.7-2.1V25.7c0-2-0.1-5.2-0.2-7l3.9,2c0.2,0.1,0.2,0.2,0.2,0.2c0,0.1,0,0.2-0.2,0.3
+		l-1.5,1v2.4c1.1,4.2,2.5,9.1,4.2,13.2c2.6-2.4,6.5-6.9,9.4-10.6l2.9,2.7c0.3,0.2,0.4,0.4,0.4,0.5c0,0.1-0.1,0.1-0.9,0.1
+		c-0.9,0-1.4,0.2-2.3,0.8l-9.2,7.3c4.9,11.4,10.7,15.8,16.9,17V56.5z"/>
+	<path stroke="white" d="M155.5,38.3c0.3,0.3,0.4,0.5,0.4,0.7s-0.2,0.2-0.7,0.2h-39.1c-1,0-2.4,0.1-3.2,0.5l-1.3-1.8
+		c1.2,0.1,2.4,0.2,3.5,0.2h35l2.2-3.2L155.5,38.3z"/>
+	<path stroke="white" d="M178.5,33.3c0.2,0.2,0.3,0.3,0.3,0.4c0,0.1-0.1,0.1-0.4,0.1h-7.5v3.9c3.9,2.1,6.6,4.1,6.6,6.3
+		c0,1.2-0.7,2.1-1.4,2.1c-0.5,0-0.9-0.2-1.1-1.4c-0.3-1.5-1.2-3.6-4.1-6.1v14.2c0,3.6,0,6,0.1,8.2v0.3c0,0.7-0.2,1-1.1,1.3
+		c-0.4,0.2-0.7,0.3-1,0.3c-0.3,0-0.4-0.3-0.4-1v-0.6c0.1-2.8,0.2-5.9,0.2-8.6V38.7c-2.1,4.8-5.2,10.4-8.7,14.5l-0.5-0.4
+		c4.7-7.4,6.8-12.2,8.8-18.9h-4.4c-1,0-2.4,0.2-3.2,0.5l-1.3-1.8c1.2,0.1,2.4,0.2,3.5,0.2h5.9v-8.7c-2.5,0.6-5.1,1.1-8.4,1.6
+		l-0.1-0.6c6-1.7,11.1-3.4,15.6-5.7l2.1,2.2c0.2,0.2,0.3,0.4,0.3,0.5c0,0.1,0,0.1-0.2,0.1c-0.1,0-0.7-0.1-0.8-0.1
+		c-0.6,0-1.2,0.1-2.2,0.4c-1.4,0.4-2.8,0.8-4.1,1.1v9.2h3.3l1.7-2.6L178.5,33.3z M203.9,59.1c0.2,0.2,0.3,0.3,0.3,0.4
+		c0,0.1-0.1,0.2-0.5,0.2H178c-1,0-2.4,0.2-3.2,0.5l-1.3-1.8c1.2,0.1,2.4,0.2,3.5,0.2h11.4v-9.2h-5.8c-1,0-2.4,0.1-3.2,0.5l-1.3-1.7
+		c1.2,0.1,2.4,0.2,3.5,0.2h6.9v-7.7H182c-1,0-2.4,0.2-3.2,0.5l-1.3-1.8c1.2,0.1,2.4,0.2,3.5,0.2h16.6l1.9-2.5l3.1,2.9
+		c0.2,0.2,0.4,0.4,0.4,0.5c0,0.1-0.2,0.1-0.5,0.1h-11.8v7.7h5.3l1.8-2.6l3.2,3c0.2,0.2,0.4,0.4,0.4,0.5c0,0.1-0.2,0.2-0.5,0.2h-10.1
+		v9.2h8.1l2-2.8L203.9,59.1z M200.3,22.6c0.1,0.1,0.2,0.1,0.2,0.2s-0.1,0.2-0.3,0.3l-1.5,1v7.2c0,0.6,0.2,3.2,0.2,3.6
+		c0,1-2,1.5-2.1,1.5c-0.3,0-0.4-0.2-0.4-0.7v-2h-13.1v1.8c0,0.6-0.2,0.7-1.2,1.2c-0.4,0.2-0.7,0.3-0.9,0.3c-0.2,0-0.3-0.2-0.3-0.6
+		c0-1.3,0.1-3.5,0.1-4.8v-6.8c0-1.2,0-3.5-0.1-5l2.5,2.3h12.1l1.4-2L200.3,22.6z M196.4,32.7v-9.5h-13.1v9.5H196.4z"/>
+	<path stroke="white" d="M154.8,115.3c0.4,0.3,0.6,0.6,0.6,0.8s-0.2,0.3-0.8,0.3h-38.1c-1,0-2.4,0.2-3.2,0.5l-1.3-1.8
+		c1.2,0.1,2.4,0.2,3.5,0.2h34l2.2-2.9L154.8,115.3z M153.2,83.3c0.3,0.3,0.5,0.6,0.5,0.7c0,0.2-0.2,0.2-0.7,0.2h-32.5
+		c-1,0-2.4,0.2-3.2,0.5L116,83c1.2,0.1,2.4,0.2,3.5,0.2h28.6l2-2.7L153.2,83.3z M148.5,98.1c0.4,0.3,0.6,0.6,0.6,0.8
+		c0,0.2-0.2,0.3-0.8,0.3h-24.8c-1,0-2.4,0.2-3.2,0.5L119,98c1.2,0.1,2.4,0.2,3.5,0.2h21.1l2-2.6L148.5,98.1z"/>
+	<path stroke="white" d="M203.3,119.2c0.1,0.1,0.2,0.2,0.2,0.3c0,0.1-0.2,0.1-0.5,0.1h-38.4c-1.3,0-2.3,0.1-3,0.4l-1.7-1.7
+		c1.2,0.1,2.3,0.2,3.7,0.2H181v-13.7h-10.4c-1.8,0-2.4,0.1-3.1,0.3l-1.5-1.6c1.2,0.1,2.2,0.2,3.6,0.2H181V92.6h-12
+		c-3.3,6.2-5.2,9.4-7.5,12l-0.6-0.4c3.9-6.1,7.3-13.7,9.9-22.1l3.2,2.4c0.2,0.1,0.3,0.2,0.3,0.3c0,0.1-0.2,0.2-0.7,0.4
+		c-1,0.2-1.2,0.9-4,6.3H181v-6.9c0-3.8,0-5.3-0.1-7.2l4.3,2.4c0.1,0.1,0.2,0.1,0.2,0.2c0,0.1-0.1,0.2-0.4,0.4l-1.5,1v10.1h11.1
+		l2.4-3.1l3.6,3.6c0.2,0.2,0.2,0.3,0.2,0.4c0,0.1-0.1,0.1-0.5,0.1h-16.8v11.3h9l2.4-3l3.6,3.6c0.1,0.1,0.2,0.3,0.2,0.3
+		c0,0.1-0.2,0.2-0.6,0.2h-14.6v13.7h14l2.3-3L203.3,119.2z"/>
+	<path stroke="white" d="M251.5,84.3c0.4,0.4,0.6,0.6,0.6,0.8c0,0.2-0.2,0.2-0.8,0.2h-24.5c-1.4,2.4-3,5.1-4.2,7h18l1.4-2.2l2.9,1.8
+		c0.4,0.2,0.6,0.4,0.6,0.6s-0.1,0.3-0.5,0.5l-1.2,0.9v22.2c0,3.4-0.2,4.1-2.9,5.3c-0.2,0.1-0.4,0.1-0.5,0.1c-0.2,0-0.3-0.1-0.4-0.6
+		c-0.3-1.6-1.3-2.2-5.8-3.5l0.2-0.7c2.7,0.3,4.4,0.5,5.5,0.5c1.5,0,1.6-0.4,1.6-1.3v-7.3h-18.8v4.1c0,1.1,0.1,6,0.1,6.7
+		c0,0.7-0.2,0.9-1.2,1.4c-0.4,0.2-0.7,0.4-1,0.4c-0.3,0-0.3-0.3-0.3-0.9v-0.4c0.1-2.8,0.1-7.2,0.1-9.9V95.4
+		c-3.8,5.1-8.3,10.1-12.4,13.5l-0.5-0.6c6.8-6.2,12.8-15.2,16.7-22.9h-11.5c-1,0-2.4,0.2-3.2,0.5l-1.3-1.8c1.2,0.1,2.4,0.2,3.5,0.2
+		h13.1c1.9-3.8,2.9-6,3.7-8.3l3.3,2c0.4,0.2,0.5,0.4,0.5,0.5c0,0.1-0.2,0.2-0.7,0.3c-1.1,0.2-1.5,0.7-2,1.6c-0.5,1-1.3,2.4-2.2,3.9
+		h18.9l2.3-2.9L251.5,84.3z M241.5,100v-6.6h-18.8v6.6H241.5z M241.5,107.5V101h-18.8v6.5H241.5z"/>
+	<path stroke="white" d="M299,109.2c0.4,0.4,0.6,0.7,0.6,0.9s-0.3,0.3-0.9,0.3h-20v1.8c0,2.9,0,5.1,0.2,7.3v0.3c0,0.7-0.2,0.9-1.2,1.3
+		c-0.4,0.2-0.8,0.3-1,0.3c-0.3,0-0.4-0.3-0.4-1.1v-0.4c0.1-2.8,0.1-5.5,0.1-7.8v-1.7h-16.5c-1,0-2.4,0.2-3.1,0.5l-1.3-1.7
+		c1.1,0.1,2.3,0.2,3.4,0.2h17.5v-6.9h-11.9c-1,0-2.4,0.2-3.1,0.5l-1.3-1.7c1.1,0.1,2.3,0.2,3.4,0.2h16.8l4.8-8.4l2.5,1.7
+		c0.2,0.2,0.4,0.3,0.4,0.4s-0.2,0.2-0.6,0.4c-1.1,0.3-1.7,0.9-6,5.9h9.7l2.1-2.5l2.5,2.4c0.4,0.4,0.7,0.7,0.7,0.9
+		c0,0.2-0.3,0.3-0.9,0.3h-16.7v6.9h15.6l2.2-2.9L299,109.2z M298.5,91c0.4,0.4,0.6,0.6,0.6,0.8c0,0.2-0.3,0.3-0.9,0.3h-37.8
+		c-1,0-2.4,0.2-3.1,0.5l-1.3-1.7c1.1,0.1,2.3,0.2,3.4,0.2h17.1v-6.6h-10.7c-1,0-2.4,0.2-3.1,0.5l-1.3-1.7c1.1,0.1,2.3,0.2,3.4,0.2
+		h11.7v-2.6c0-1.9,0-3-0.1-4.7l3.5,1.6c0.4,0.2,0.7,0.4,0.7,0.6c0,0.1-0.1,0.2-0.4,0.4l-1.2,0.8v3.9h10.5l1.9-2.6l2.6,2.5
+		c0.4,0.4,0.6,0.7,0.6,0.8c0,0.2-0.3,0.3-0.9,0.3h-14.8v6.6h14.8l2.2-2.7L298.5,91z M267.4,93.1c6,3,6.4,4.5,6.4,5.7
+		c0,1.1-0.7,1.9-1.4,1.9c-0.6,0-1-0.6-1.2-1.2c-0.6-2-2.4-4.5-4.2-5.9L267.4,93.1z"/>
+			</g>
+		</svg> 
+	</div>
+	</div>
+</div>
+<!--导航栏-->
+<header style="display:none;">
+	<div class="head-bg ani fade-in">
+		<div class="wrap menu">
+			<div class="logo">
+                <img src="images/logo-tiny.png" alt="logo">
+			</div>
+			<li class="menu-list">
+				<ul><a id="btn1" href="#1">关于武大</a></ul>
+				<ul><a id="btn2" href="#2">游在珞珈</a></ul>
+				<ul><a id="btn3" href="#3">食在珞珈</a></ul>
+				<ul><a id="btn4" href="#4">学在珞珈</a></ul>
+			</li>
+		</div>
+	</div>
+</header>
+<main class="container" style="display:none;">
+    <!--主介绍界面-->
+	<div class="main-intro ani fade-in-top">
+		<h1>『珞珈印象』</h1>
+		<p>Impression of Luojia</p>
+        <!--点赞功能-->
+		<div class="more">
+			<a id="likeit" class="btn blue" onmouseover="likeOver(this)" onmouseout="likeOut(this)" onclick="likeClick(this)">Like it</a>
+		</div>
+	</div>
+    <!--关于武大-->
+	<div class="main-bg text1" id="1">
+		<div class="row wrap">
+			<div class="col-l-6 left center">
+				<h1>关于武大</h1>
+				<p>武汉大学，简称武大，是一所位于中国大陆湖北省武汉市的中央级研究型大学。办学源头可以追溯到清末1893年建立的自强学堂。学校坐拥珞珈山，占地面积5178亩，建筑面积258万平方米，中西合璧的宫殿式建筑群古朴典雅，巍峨壮观，被誉为“中国最美丽的大学”。</p>
+				<a class="btn" target="_blank" href="http://www.whu.edu.cn/">了解更多</a>
+			</div>
+			<div class="col-l-6 right center">
+				<img alt="WHU logo" src="images/whu-logo.png">
+			</div>
+		</div>
+	</div>
+    <!--游在珞珈-->
+	<div class="main-bg text2" id="2">
+		<h1>游在珞珈</h1>
+		<div class="wrap">
+			<div class="row thin">
+				<div class="col-m-4">
+					<img src="images/a1.jpg">
+				</div>
+				<div class="col-m-4">
+					<img src="images/a2.jpg">
+				</div>
+				<div class="col-m-4">
+					<img src="images/a3.jpg">
+				</div>
+				<div class="col-m-3">
+					<img src="images/a4.jpg">
+				</div>
+				<div class="col-m-3">
+					<img src="images/a5.jpg">
+				</div>
+				<div class="col-m-3">
+					<img src="images/a6.jpg">
+				</div>
+				<div class="col-m-3">
+					<img src="images/a7.jpg">
+				</div>
+
+			</div>
+		</div>
+        <br/>
+        <div class="moredetail" style="text-align: center;font-size: large;">
+            <p>春夏秋冬，朝朝暮暮</p>
+            <p>东湖之滨，珞珈山上</p>
+            <p>中国最美大学</p>
+            <p>你我共赴四年之约</p>
+        </div>
+	</div>
+    <!--食在珞珈-->
+    <div class="main-bg text2" id="3">
+        <h1>食在珞珈</h1>
+        <div class="wrap">
+            <div class="row thin">
+                <div class="col-m-4">
+                    <img src="images/b1.jpg">
+                </div>
+                <div class="col-m-4">
+                    <img src="images/b2.jpg">
+                </div>
+                <div class="col-m-4">
+                    <img src="images/b3.jpg">
+                </div>
+                <div class="col-m-4">
+                    <img src="images/b4.jpg">
+                </div>
+                <div class="col-m-4">
+                    <img src="images/b5.png">
+                </div>
+                <div class="col-m-4">
+                    <img src="images/b6.jpg">
+                </div>
+
+            </div>
+        </div>
+        <br/>
+        <div class="moredetail" style="text-align: center;font-size: large;">
+            <p>梅 枫 樱 湖 工 信</p>
+            <p>为你，尝遍千千万万</p>
+        </div>
+    </div>
+    <!--学在珞珈-->
+    <div class="main-bg text2" id="4">
+        <h1>学在珞珈</h1>
+        <div class="wrap">
+            <div class="row thin">
+                <div class="col-m-3">
+                    <img src="images/c1.jpg">
+                </div>
+                <div class="col-m-3">
+                    <img src="images/c2.jpg">
+                </div>
+                <div class="col-m-3">
+                    <img src="images/c3.jpg">
+                </div>
+                <div class="col-m-3">
+                    <img src="images/c4.jpg">
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="moredetail" style="text-align: center;font-size: large;">
+            <p>樱顶晨读</p>
+            <p>早八的人流</p>
+            <p>万林的久久伫足</p>
+            <p>图书馆的深夜独处</p>
+            <p>……</p>
+        </div>
+    </div>
+</main>
+<footer style="display: none;">
+	<p class="footer">© 2018 Designed By <a href="#">'; DROP TABLE *; --</a> Framework By <a target="_blank" href="https://works.paugram.com/style/">Kico Style</a></p>
+</footer>
+</body>
+</html>
