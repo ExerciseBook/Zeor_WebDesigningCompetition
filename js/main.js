@@ -11,10 +11,18 @@ function likeOut(obj) {
 function likeClick(obj) {
     if ( count == 124 ) {
         count++;
-        alert("祝武大生日快乐！");
+		ks.notice("祝武大生日快乐！", {
+			color: "blue",
+			time: 2000
+		});
         obj.innerHTML = "+" + count;
     }
-    else alert("你已经点过赞了哦");
+    else {
+		ks.notice("你已经点过赞了哟。", {
+			color: "red",
+			time: 2000
+		});
+	}
 }
 
 /*调整大小*/
