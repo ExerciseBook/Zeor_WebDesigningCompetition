@@ -7,8 +7,12 @@ body{
 	background-attachment: fixed;
 	background-position: center;
 }
+/*字体指定*/
 h1,h2{
-	font-weight: normal;
+	font-family: "SourceHanSerifCNB"!important;
+}
+*:not([class*="ico"]):not(i){
+    font-family: "SourceHanSerifCN";
 }
 
 /*入场动画*/

@@ -1,0 +1,10 @@
+/*字体指定加载*/
+@font-face {
+	font-family: "SourceHanSerifCN";
+	src: url(../fonts/SourceHanSerifCN-Regular.ttf);
+}
+
+@font-face {
+	font-family: "SourceHanSerifCNB";
+	src: url(../fonts/SourceHanSerifCN-Bold.ttf);
+}
