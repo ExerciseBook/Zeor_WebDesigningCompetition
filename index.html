@@ -18,7 +18,9 @@
 
         window.onload = function(){
             var timeSpan = new Date().getTime() - startTime;
-
+			
+			$(".enter_word").css("display","inline");
+			
             //文字动画
             var enter_word1 = anime({
                 targets: '#enter_word1 .lines path',
