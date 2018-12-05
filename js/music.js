@@ -101,7 +101,7 @@ function music_init() {
 		
 
     renderFrame();
-	audio.src = "/audio/FELT - inside.mp3"
+	audio.src = "audio/FELT - inside.mp3"
 	audio.onended = function() {
 		music_pause();
 	};

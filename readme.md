@@ -1,6 +1,9 @@
 # 零杯设计文档
 > '; DROP TABLE \*; -- 组
 
+- **使用HTTP/HTTPS协议浏览本项目以达到更好的观看体验**
+- [Github Page](https://exercisebook.github.io/Zeor_WebDesigningCompetition/)
+
 ## 网页主题
  - 印象珞珈
 
@@ -18,23 +21,7 @@
 
 ### 本项目引用的第三方支持库：
  - jQuery : <https://jquery.com/>
+ - jQuery-cookie : <https://github.com/carhartl/jquery-cookie>
  - anime.js : <http://animejs.com/>
  - Kico Style : <https://works.paugram.com/style/>
-
-### 目录结构：
-```
-  ./
-  │ index.html // 项目主页
-  │
-  ├─css
-  │ binkic.css // Kico Style 框架样式文件
-  │ main.css // 项目自定义样式文件
-  │
-  ├─images // 本项目中用到的图片文件
-  │ ......
-  │
-  └─js
-    anime.js // animejs 动画支持库 : 开场动画支持
-    jquery-3.2.1.min.js // jquery 支持库 : 交互支持
-    main.js // 页面脚本代码 : 页面交互逻辑
-```
+ - wayou/audio-visualizer-with-controls : <https://github.com/wayou/audio-visualizer-with-controls>
