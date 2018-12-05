@@ -6,6 +6,7 @@ body{
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
+	z-index=-2;
 }
 /*字体指定*/
 h1,h2{
@@ -21,6 +22,7 @@ div .enter{
 	width: 100%;
 	height: 100%;
 	text-align: center;
+	z-index: 0;
 }
 
 div .enterimg{
@@ -36,25 +38,25 @@ div .enterimg{
 
 div .enter_word {
 	display: none;
-	width: 50%;
-	padding-bottom:15%;
-	text-align: center;
 	position:absolute;
 	left:40%;
 	top:30%;
+	width: 50%;
+	padding-bottom:15%;
+	vertical-align: center;
 }
 
 
 div .enter_logo{
 	position:absolute;
+	left:20%;
+	top:30%;
 	background: url(../images/logo-big.png)  no-repeat;
 	background-position: center;
 	background-size:100%;
 	width: 15%;
 	padding-bottom:15%;
 	vertical-align: center;
-	left:20%;
-	top:30%;
 }
 
 .head-bg{
@@ -206,3 +208,4 @@ div .enter_logo{
 		color: #000000;
 	}
 }
+
