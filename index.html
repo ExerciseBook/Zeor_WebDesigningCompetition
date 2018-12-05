@@ -8,58 +8,90 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css"/>
 	<link href="css/font.css" rel="stylesheet" type="text/css"/>
 	<link href="css/scroll.css" rel="stylesheet" type="text/css"/>
-	<script src="js/jquery-3.2.1.min.js"></script>
+	<link href="css/music.css" rel="stylesheet" type="text/css"/>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/jquery.cookie.js"></script>
 	<script src="js/anime.js"></script>
 	<script src="js/kico.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/scroll.js"></script>
+	<script src="js/music.js"></script>
 	<title>珞珈印象</title>
 	<script>
         //计时的入场动画
         var startTime = new Date().getTime();
-        window.onload = function(){
-            var timeSpan = new Date().getTime() - startTime;
-			      $(".enter_word").css("display","inline");
-            //文字动画
-            var enter_word1 = anime({
-                targets: '#enter_word1 .lines path',
-                strokeDashoffset: [anime.setDashoffset, 0],
-                easing: 'easeInOutSine',
-                duration: 2000,
-                delay: function(el, i) { return i * 100 },
-                direction: 'alternate',
-                //loop: true
-            });
-            //加载完成后等待2000ms，入场图淡出
-            if(timeSpan >= 2000) {
-                $(function() {
-                    $(".enter").fadeOut(500);
-                    setTimeout(function(){
-                        $("main").css("display","block");
-                        $("header").css("display","block");
-                        $("footer").css("display","block");
-                        $("body").css("overflow","visible");
-                    }, 500);
-                })
-            } else {
-                setTimeout(function(){
-                    $(function() {
-                        $(".enter").fadeOut(500);
-                        setTimeout(function(){
-                            $("main").css("display","block");
-                            $("header").css("display","block");
-                            $("footer").css("display","block");
-                            $("body").css("overflow","visible");
-                        }, 500);
-                    })
-                }, 2000 - timeSpan);
-            }
+        $(document).ready(function(){
+		
 			LoadScroll();
-        }
+			if (isPC()) {music_init();};
+			
+			view = $.cookie("view");
+			if ((!view) && (isPC())){
+				$.cookie("view", Math.random());
+				
+				var timeSpan = new Date().getTime() - startTime;
+				$(".enter_word").css("display","inline");
+				//文字动画
+				var enter_word1 = anime({
+					targets: '#enter_word1 .lines path',
+					strokeDashoffset: [anime.setDashoffset, 0],
+					easing: 'easeInOutSine',
+					duration: 2000,
+					delay: function(el, i) { return i * 100 },
+					direction: 'alternate',
+					//loop: true
+				});
+				//加载完成后等待2000ms，入场图淡出
+				if(timeSpan >= 2000) {
+					$(function() {
+						$(".enter").fadeOut(500);
+						setTimeout(function(){
+							$("main").css("display","block");
+							$("header").css("display","block");
+							$("footer").css("display","block");
+							$("body").css("overflow","visible");
+						}, 500);
+					})
+				} else {
+					setTimeout(function(){
+						$(function() {
+							$(".enter").fadeOut(500);
+							setTimeout(function(){
+								$("main").css("display","block");
+								$("header").css("display","block");
+								$("footer").css("display","block");
+								$("body").css("overflow","visible");
+							}, 500);
+						})
+					}, 2000 - timeSpan);
+				}
+				
+				//if (isPC()) {music_play();};
+				
+			}
+			else
+			{
+				$(".enter").css("display","none");
+				$("main").css("display","block");
+				$("header").css("display","block");
+				$("footer").css("display","block");
+				$("body").css("overflow","visible");
+			};			
+		
+			if  (!isPC()) {
+				$("#music-control").remove();
+				$("#music-canvas").remove();
+				$("#music-audio").remove();
+			};
+			
+        });
 	</script>
 </head>
 
 <body>
+<!--背景音乐-->
+<canvas id='music-canvas'></canvas>
+<audio id="music-audio"></audio>
 <!--入场动画-->
 <div class="enter">
 	<div class="enterimg">
@@ -135,6 +167,7 @@
 				<ul><a id="btn2" href="#2">游在珞珈</a></ul>
 				<ul><a id="btn3" href="#3">食在珞珈</a></ul>
 				<ul><a id="btn4" href="#4">学在珞珈</a></ul>
+				<ul><a id="music-control">开启音乐</a></ul>
 			</li>
 		</div>
 	</div>
