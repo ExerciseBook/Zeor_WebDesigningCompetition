@@ -1,0 +1,85 @@
+/* 禁用 Chrome 原生滚动条 */
+body::-webkit-scrollbar {
+	display: none;
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+/* 禁用 Edge 原生滚动条 */
+body {
+    -ms-overflow-style: none;
+}
+
+.vert_scroll {
+	z-index: 999999999999;
+	width: 30px;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	display: none;
+	-webkit-user-select: none;
+	transition: opacity 200ms linear;
+	padding: 0;
+	margin: 0;
+}
+
+.vert_scroll_bar {
+	position: relative;
+	height: 100%;
+	pointer-events: none;
+	-webkit-user-select: none;
+	padding: 0;
+	margin: 0;
+}
+
+.vert_fade {
+	z-index: 9999999999999;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	width: 45px;
+	display: block;
+	height: 100%;
+	pointer-events: none;
+	-webkit-user-select: none;
+	padding: 0;
+	margin: 0;
+}
+
+.hori_scroll {
+	z-index: 999999999999;
+	height: 30px;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	display: none;
+	-webkit-user-select: none;
+	transition: opacity 200ms linear;
+	padding: 0;
+	margin: 0;
+}
+
+.hori_scroll_bar {
+	position: relative;
+	width: 100%;
+	pointer-events: none;
+	-webkit-user-select: none;
+	padding: 0;
+	margin: 0;
+}
+
+.hori_fade {
+	z-index: 9999999999999;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 30px;
+	display: block;
+	width: 100%;
+	pointer-events: none;
+	-webkit-user-select: none;
+	padding: 0;
+	margin: 0;
+}
