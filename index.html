@@ -12,14 +12,13 @@
 	<script src="js/anime.js"></script>
 	<script src="js/kico.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/scroll.js"></script>
 	<title>珞珈印象</title>
 	<script>
         //计时的入场动画
         var startTime = new Date().getTime();
-
         window.onload = function(){
             var timeSpan = new Date().getTime() - startTime;
-
             //文字动画
             var enter_word1 = anime({
                 targets: '#enter_word1 .lines path',
@@ -30,7 +29,6 @@
                 direction: 'alternate',
                 //loop: true
             });
-
             //加载完成后等待2000ms，入场图淡出
             if(timeSpan >= 2000) {
                 $(function() {
@@ -55,6 +53,7 @@
                     })
                 }, 2000 - timeSpan);
             }
+			LoadScroll();
         }
 	</script>
 </head>
