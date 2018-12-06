@@ -14,7 +14,6 @@
  * reference: http://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html
  */
 
-	var width,height;
     var audio;
     var ctx;
     var analyser;
@@ -35,12 +34,12 @@
 function resize() {
 	cwidth = $("#music-canvas").width();
 	cheight = $("#music-canvas").height();
-	meterWidth = 10/2; //width of the meters in the spectrum
-	gap = 2/2; //gap between meters
-	capHeight = 2/2;
+	meterWidth = 5; //width of the meters in the spectrum
+	gap = 0.5; //gap between meters
+	capHeight = 2;
 	capStyle = '#fff';
 	meterNum = $("#music-canvas").width() / (meterWidth+gap); //count of the meters
-	//capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
+	capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
 }
 
 function renderFrame() {
@@ -80,8 +79,6 @@ function music_play(){
 }
 
 function music_init() {
-	width = $("#music-canvas").width();
-    height = $("#music-canvas").height();
     audio = document.getElementById('music-audio');
     ctx = new AudioContext();
     analyser = ctx.createAnalyser();
