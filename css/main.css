@@ -11,9 +11,11 @@ body{
 /*字体指定*/
 h1,h2{
 	font-family: "SourceHanSerifCNB"!important;
+    text-shadow: 0.02em 0.02em 0.05em #999999 !important;
 }
 *:not([class*="ico"]):not(i){
     font-family: "SourceHanSerifCN";
+    text-shadow: 0.02em 0.02em 0.05em #999999 !important;
 }
 
 /*入场动画*/
