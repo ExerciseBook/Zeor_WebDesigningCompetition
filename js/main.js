@@ -3,7 +3,7 @@
 /*点赞功能*/
 var count = 124;
 function likeOver(obj) {
-    obj.innerHTML = "+" + count;
+    obj.innerHTML = "+ " + count;
 }
 function likeOut(obj) {
     obj.innerHTML = "Like it";

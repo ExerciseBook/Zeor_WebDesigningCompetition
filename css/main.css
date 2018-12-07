@@ -49,7 +49,7 @@ div .enter_logo{
 	height:20%;
 }
 
-div .enter_word {
+div .enter_word{
 	display: none;
 	position:absolute;
 	left:45%;
@@ -57,6 +57,12 @@ div .enter_word {
 	width:35%;
 	height:20%;
 	text-align: left;
+}
+
+/*点赞按钮*/
+#likeit{
+	text-align: center;
+	width: 6.185em;
 }
 
 /*主页面*/
@@ -127,6 +133,7 @@ p.paragraph{
 	transition: line-height 0.3s, color 0.3s;
 }
 .menu a:hover{
+	cursor: pointer;
 	text-shadow: 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.3);
 }
 .menu-roll{
