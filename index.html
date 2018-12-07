@@ -16,6 +16,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/scroll.js"></script>
 	<script src="js/music.js"></script>
+	<script src="js/snowfall.jquery.js"></script>
 	<title>珞珈印象</title>
 	<script>
 		var view;
@@ -41,9 +42,9 @@
 					strokeDashoffset: [anime.setDashoffset, 0],
 					easing: 'easeInOutSine',
 					duration: 2000,
-					delay: function(el, i) { return i * 100 },
+					delay: function(el, i) { return 200 + i * 100 },
 					direction: 'alternate',
-					loop: true
+					loop: false
 				});
 			}
 			else
@@ -70,30 +71,34 @@
 				//加载完成后等待2000ms，入场图淡出
 				if(timeSpan >= 2000) {
 					$(function() {
-						$(".enter").fadeOut(500);
+						$(".enter").delay(1500).fadeOut(500);
 						setTimeout(function(){
 							$("main").css("display","block");
 							$("header").css("display","block");
 							$("footer").css("display","block");
 							$("body").css("overflow","visible");
 							if (!enter_word_obj) {enter_word_obj.pause()};
-						}, 500);
+							initMaple();
+						}, 2000);
 					})
 				} else {
                     setTimeout(function () {
                         $(function () {
-                            $(".enter").fadeOut(500);
+                            $(".enter").delay(1500).fadeOut(500);
                             setTimeout(function () {
                                 $("main").css("display", "block");
                                 $("header").css("display", "block");
                                 $("footer").css("display", "block");
                                 $("body").css("overflow", "visible");
 								if (!enter_word_obj) {enter_word_obj.pause()};
-                            }, 500);
+								initMaple();
+                            }, 2000);
                         })
                     }, 2000 - timeSpan);
                 }
 				//if (isPC()) {music_play();};
+			} else {
+				initMaple();
 			}
             ks.image(".zoomimg");
 		}

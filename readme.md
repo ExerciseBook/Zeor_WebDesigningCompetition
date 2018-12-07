@@ -35,6 +35,7 @@
  - anime.js : <http://animejs.com/>
  - Kico Style : <https://works.paugram.com/style/>
  - wayou/audio-visualizer-with-controls : <https://github.com/wayou/audio-visualizer-with-controls>
+ - loktar00/JQuery-Snowfall : <https://github.com/loktar00/JQuery-Snowfall>
  
 ### 背景音乐
  - FELT (NAGI☆) - inside 
