@@ -45,6 +45,9 @@ $(document).ready(function () {
             $(".head-bg").removeClass("menu-roll");
         }
 	});
+	$("#btn0").click(function () {
+        $("html,body").animate({scrollTop: 0}, 1000);
+    });
 	$("#btn1").click(function () {
 		$("html,body").animate({scrollTop: $("#1").offset().top - 60}, 1000);
 	});
@@ -57,9 +60,6 @@ $(document).ready(function () {
 	$("#btn4").click(function () {
 		$("html,body").animate({scrollTop: $("#4").offset().top - 60}, 1000);
 	});
-	$("#btn5").click(function () {
-        $("html,body").animate({scrollTop: 0}, 1000);
-    });
 	/*查看更多图片（功能实现中）*/
 	$('#viewmore').click(function(){
 		if (hideimg === 0){
