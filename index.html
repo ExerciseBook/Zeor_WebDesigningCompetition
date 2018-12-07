@@ -23,9 +23,8 @@
         //计时的入场动画
         var startTime = new Date().getTime();
         $(document).ready(function(){
-		
-			LoadScroll();
-			if (_isPC) {music_init();};
+
+			if (_isPC) {music_init();LoadScroll();};
 			
 			view = $.cookie("view");
 			if ((!view) && (_isPC)){	
