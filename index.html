@@ -18,15 +18,37 @@
 	<script src="js/music.js"></script>
 	<title>珞珈印象</title>
 	<script>
+		var view;
+		var _isPC=isPC();
         //计时的入场动画
         var startTime = new Date().getTime();
         $(document).ready(function(){
 		
 			LoadScroll();
-			if (isPC()) {music_init();};
+			if (_isPC) {music_init();};
 			
 			view = $.cookie("view");
-			if ((!view) && (isPC())){
+			if ((!view) && (_isPC)){	
+			}
+			else
+			{
+				$(".enter").css("display","none");
+				$("main").css("display","block");
+				$("header").css("display","block");
+				$("footer").css("display","block");
+				$("body").css("overflow","visible");
+			};			
+		
+			if  (!_isPC) {
+				$("#music-control").remove();
+				$("#music-canvas").remove();
+				$("#music-audio").remove();
+			};
+			
+        });
+		
+		window.onload=function(){
+			if ((!view) && (_isPC)){	
 				$.cookie("view", Math.random());
 				
 				var timeSpan = new Date().getTime() - startTime;
@@ -67,24 +89,8 @@
 				}
 				
 				//if (isPC()) {music_play();};
-				
 			}
-			else
-			{
-				$(".enter").css("display","none");
-				$("main").css("display","block");
-				$("header").css("display","block");
-				$("footer").css("display","block");
-				$("body").css("overflow","visible");
-			};			
-		
-			if  (!isPC()) {
-				$("#music-control").remove();
-				$("#music-canvas").remove();
-				$("#music-audio").remove();
-			};
-			
-        });
+		}
 	</script>
 </head>
 
