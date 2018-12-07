@@ -1391,7 +1391,7 @@ img[bk-image=active]{
 	text-align: center;
 }
 
-.bk-image>div.remove:before{
+.bk-image>div.remove{
     animation: fade-off .3s both;
     -webkit-animation: fade-off .3s both;
 }
