@@ -125,10 +125,14 @@ function Kico_Style () {
     };
 
     // 图片缩放
-    kico.image_box = this.create("div", "bk-image");
-    kico.image_single = this.create("img");
-    kico.image_box.appendChild(kico.image_single);
-
+	kico.image_box = this.create("div", "bk-image");
+	kico.image_single = this.create("img");
+	kico.image_alt_div = this.create("div");
+	kico.image_alt_content_tag = this.create("h1");
+	kico.image_box.appendChild(kico.image_single);
+	kico.image_box.appendChild(kico.image_alt_div);
+	kico.image_alt_div.appendChild(kico.image_alt_content_tag);
+	
     this.image = function bk_image(selector) {
         var get_images = that.selectAll(selector);
 
@@ -136,6 +140,7 @@ function Kico_Style () {
             obj.setAttribute("bk-image", "active");
             obj.onclick = function () {
                 kico.image_single.src = obj.src;
+				kico.image_alt_content_tag.innerHTML=obj.alt;
                 if (!document.querySelector("body > .bk-image")) {
                     document.body.appendChild(kico.image_box);
                 }
@@ -148,10 +153,12 @@ function Kico_Style () {
 
         kico.image_box.onclick = function () {
             kico.image_box.classList.add("remove");
+            kico.image_alt_div.classList.add("remove");
             setTimeout(function () {
                 try{
                     document.body.removeChild(kico.image_box);
                     kico.image_box.classList.remove("remove");
+					kico.image_alt_div.classList.add("remove");
                 }
                 catch (err){}
             }, 300);
