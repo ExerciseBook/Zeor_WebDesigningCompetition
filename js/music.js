@@ -29,7 +29,7 @@
         meterNum,
         capYPositionArray = [];
 	var isPlaying;
- 
+	var isAudioSetup;
 
 function resize() {
 	cwidth = $("#music-canvas").width();
@@ -78,32 +78,38 @@ function music_play(){
 	isPlaying=true;
 }
 
+function music_setup(){
+	if (!isAudioSetup) {
+		isAudioSetup=true;
+		ctx = new AudioContext();
+		analyser = ctx.createAnalyser();
+		audioSrc = ctx.createMediaElementSource(audio);
+		// we have to connect the MediaElementSource with the analyser 
+		audioSrc.connect(analyser);
+		analyser.connect(ctx.destination);
+		// we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
+		// analyser.fftSize = 64;
+		// frequencyBinCount tells you how many values you'll receive from the analyser
+		frequencyData = new Uint8Array(analyser.frequencyBinCount);
+		// we're ready to receive some data!
+
+		canvas = document.getElementById('music-canvas');
+		resize();
+		ctx = canvas.getContext('2d');
+			
+
+		renderFrame();
+	}
+}
+
 function music_init() {
-    audio = document.getElementById('music-audio');
-    ctx = new AudioContext();
-    analyser = ctx.createAnalyser();
-    audioSrc = ctx.createMediaElementSource(audio);
-    // we have to connect the MediaElementSource with the analyser 
-    audioSrc.connect(analyser);
-    analyser.connect(ctx.destination);
-    // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
-    // analyser.fftSize = 64;
-    // frequencyBinCount tells you how many values you'll receive from the analyser
-    frequencyData = new Uint8Array(analyser.frequencyBinCount);
-    // we're ready to receive some data!
-
-	canvas = document.getElementById('music-canvas');
-	resize();
-	ctx = canvas.getContext('2d');
-		
-
-    renderFrame();
+	audio = document.getElementById('music-audio');
 	audio.src = "audio/FELT - inside.mp3"
 	audio.onended = function() {
 		music_pause();
 	};
 	isPlaying=false;
-	
+	isAudioSetup=false;
 	
 	$("#music-control").click(function(){
 		//music-control
@@ -112,6 +118,7 @@ function music_init() {
 		}
 		else
 		{
+			music_setup();
 			music_play();
 		}
 	});
