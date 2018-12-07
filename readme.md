@@ -28,13 +28,24 @@
 
 ## 开发文档
 
-### 本项目引用的第三方支持库：
+### 第三方支持库
  - 思源宋体 : <https://github.com/adobe-fonts/source-han-serif>
  - jQuery : <https://jquery.com/>
  - jQuery-cookie : <https://github.com/carhartl/jquery-cookie>
  - anime.js : <http://animejs.com/>
  - Kico Style : <https://works.paugram.com/style/>
  - wayou/audio-visualizer-with-controls : <https://github.com/wayou/audio-visualizer-with-controls>
+ 
+### 背景音乐
+ - FELT (NAGI☆) - inside 
+	- https://music.163.com/song?id=26103161
+	- https://osu.ppy.sh/beatmapsets/166146
+	
+### 图片资源
+ - ![一只格格不入的猪](avatar/0.jpg) 一只格格不入的猪
+ - ![XIN](avatar/1.jpg) XIN
+ - ![XIN](avatar/2.jpg) syx
+ - ![XIN](avatar/4.jpg) 庞七七
  
 ## 鸣谢
 - ![luluxia](https://avatars4.githubusercontent.com/u/29321564?s=60&v=4) [luluxia 陆陆侠](https://llx.life/) 提供布局设计基础支持
