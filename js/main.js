@@ -46,17 +46,20 @@ $(document).ready(function () {
         }
 	});
 	$("#btn1").click(function () {
-		$("body").animate({scrollTop: $("#1").offset().top - 60}, 1000);
+		$("html,body").animate({scrollTop: $("#1").offset().top - 60}, 1000);
 	});
 	$("#btn2").click(function () {
-		$("body").animate({scrollTop: $("#2").offset().top - 60}, 1000);
+		$("html,body").animate({scrollTop: $("#2").offset().top - 60}, 1000);
 	});
 	$("#btn3").click(function () {
-		$("body").animate({scrollTop: $("#3").offset().top - 60}, 1000);
+		$("html,body").animate({scrollTop: $("#3").offset().top - 60}, 1000);
 	});
 	$("#btn4").click(function () {
-		$("body").animate({scrollTop: $("#4").offset().top - 60}, 1000);
+		$("html,body").animate({scrollTop: $("#4").offset().top - 60}, 1000);
 	});
+	$("#btn5").click(function () {
+        $("html,body").animate({scrollTop: 0}, 1000);
+    });
 	/*查看更多图片（功能实现中）*/
 	$('#viewmore').click(function(){
 		if (hideimg === 0){
