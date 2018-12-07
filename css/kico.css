@@ -1372,6 +1372,35 @@ img[bk-image=active]{
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
 
+.bk-image>div:before{
+    bottom: 0;
+    content: '';
+    position: absolute;
+    animation: fade-in .5s both;
+    -webkit-animation: fade-in .5s both;
+    background: rgba(0, 0, 0, .5);
+}
+
+.bk-image>div{
+	width:100%;
+    bottom: 10%;
+    margin: auto;
+    position: absolute;
+    animation: fade-small-large .3s both;
+    -webkit-animation: fade-small-large .3s both;
+	text-align: center;
+}
+
+.bk-image>div.remove:before{
+    animation: fade-off .3s both;
+    -webkit-animation: fade-off .3s both;
+}
+
+.bk-image>div>h1{
+	color:#FFFFFF;
+	text-shadow:1px 1px 2px #000;
+}
+
 /* ----
 
 :) Copyright (C) 2018 Binkic Team. Made With ♥ By Paul.
