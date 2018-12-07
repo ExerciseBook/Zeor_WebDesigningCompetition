@@ -1,8 +1,17 @@
 # 零杯设计文档
 > '; DROP TABLE \*; -- 组
 
-- **使用HTTP/HTTPS协议浏览本项目以达到更好的观看体验**
-- [Github Page](https://exercisebook.github.io/Zeor_WebDesigningCompetition/)
+> RE. 从零开始的异世界前端开发生活
+
+## 小组成员
+```按用户名字典序排序```
+- ![Akakii](https://avatars0.githubusercontent.com/u/43156588?s=60&v=4) [Akakii](https://blog.csdn.net/akak__ii)
+- ![Exercisebook](https://avatars1.githubusercontent.com/u/6327311?s=60&v=4) [Exercisebook](https://lhr.wiki)
+- ![Sudocat](https://avatars2.githubusercontent.com/u/42528067?s=60&v=4) Sudocat
+- ![TYTY](https://avatars3.githubusercontent.com/u/13075180?s=60&v=4) TYTY
+
+## 温馨提示
+- **使用HTTP/HTTPS协议浏览本项目以达到更好的观看体验** : [Github Page 传送门](https://exercisebook.github.io/Zeor_WebDesigningCompetition/)
 
 ## 网页主题
  - 印象珞珈
@@ -20,8 +29,12 @@
 ## 开发文档
 
 ### 本项目引用的第三方支持库：
+ - 思源宋体 : <https://github.com/adobe-fonts/source-han-serif>
  - jQuery : <https://jquery.com/>
  - jQuery-cookie : <https://github.com/carhartl/jquery-cookie>
  - anime.js : <http://animejs.com/>
  - Kico Style : <https://works.paugram.com/style/>
  - wayou/audio-visualizer-with-controls : <https://github.com/wayou/audio-visualizer-with-controls>
+ 
+## 鸣谢
+- ![luluxia](https://avatars4.githubusercontent.com/u/29321564?s=60&v=4) [luluxia 陆陆侠](https://llx.life/) 提供布局设计基础支持
