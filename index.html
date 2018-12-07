@@ -16,6 +16,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/scroll.js"></script>
 	<script src="js/music.js"></script>
+	<script src="js/snowfall.jquery.js"></script>
 	<title>珞珈印象</title>
 	<script>
 		var view;
@@ -41,9 +42,9 @@
 					strokeDashoffset: [anime.setDashoffset, 0],
 					easing: 'easeInOutSine',
 					duration: 2000,
-					delay: function(el, i) { return i * 100 },
+					delay: function(el, i) { return 200 + i * 100 },
 					direction: 'alternate',
-					loop: true
+					loop: false
 				});
 			}
 			else
@@ -70,30 +71,34 @@
 				//加载完成后等待2000ms，入场图淡出
 				if(timeSpan >= 2000) {
 					$(function() {
-						$(".enter").fadeOut(500);
+						$(".enter").delay(1500).fadeOut(500);
 						setTimeout(function(){
 							$("main").css("display","block");
 							$("header").css("display","block");
 							$("footer").css("display","block");
 							$("body").css("overflow","visible");
 							if (!enter_word_obj) {enter_word_obj.pause()};
-						}, 500);
+							initMaple();
+						}, 2000);
 					})
 				} else {
                     setTimeout(function () {
                         $(function () {
-                            $(".enter").fadeOut(500);
+                            $(".enter").delay(1500).fadeOut(500);
                             setTimeout(function () {
                                 $("main").css("display", "block");
                                 $("header").css("display", "block");
                                 $("footer").css("display", "block");
                                 $("body").css("overflow", "visible");
 								if (!enter_word_obj) {enter_word_obj.pause()};
-                            }, 500);
+								initMaple();
+                            }, 2000);
                         })
                     }, 2000 - timeSpan);
                 }
 				//if (isPC()) {music_play();};
+			} else {
+				initMaple();
 			}
             ks.image(".zoomimg");
 		}
@@ -181,7 +186,7 @@
 			<div class="row thin">
 				<div class="col-l-6 left center">
 					<h1>关于武大</h1>
-					<p>武汉大学，简称武大，是一所位于中国大陆湖北省武汉市的中央级研究型大学。办学源头可以追溯到清末1893年建立的自强学堂。学校坐拥珞珈山，占地面积5178亩，建筑面积258万平方米，中西合璧的宫殿式建筑群古朴典雅，巍峨壮观，被誉为“中国最美丽的大学”。</p>
+					<p class="paragraph">武汉大学，简称武大，是一所位于中国大陆湖北省武汉市的中央级研究型大学。办学源头可以追溯到清末1893年建立的自强学堂。学校坐拥珞珈山，占地面积5178亩，建筑面积258万平方米，中西合璧的宫殿式建筑群古朴典雅，巍峨壮观，被誉为“中国最美丽的大学”。</p>
 					<a class="btn" target="_blank" href="http://www.whu.edu.cn/">了解更多</a>
 				</div>
 				<div class="col-l-6 right center">
@@ -196,25 +201,25 @@
 		<div class="wrap">
 			<div class="row thin">
 				<div class="col-m-4">
-					<img class="zoomimg" src="images/a1.jpg">
+					<img class="zoomimg" src="images/a1.jpg" alt="梅园剧场">
 				</div>
 				<div class="col-m-4">
-					<img class="zoomimg" src="images/a2.jpg">
+					<img class="zoomimg" src="images/a2.jpg" alt="第五教学楼前小公园">
 				</div>
 				<div class="col-m-4">
-					<img class="zoomimg" src="images/a3.jpg">
+					<img class="zoomimg" src="images/a3.jpg" alt="珞珈山">
 				</div>
 				<div class="col-m-3">
-					<img class="zoomimg" src="images/a4.jpg">
+					<img class="zoomimg" src="images/a4.jpg" alt="樱花城堡">
 				</div>
 				<div class="col-m-3">
-					<img class="zoomimg" src="images/a5.jpg">
+					<img class="zoomimg" src="images/a5.jpg" alt="万林博物馆">
 				</div>
 				<div class="col-m-3">
-					<img class="zoomimg" src="images/a6.jpg">
+					<img class="zoomimg" src="images/a6.jpg" alt="第五教学楼前草坪">
 				</div>
 				<div class="col-m-3">
-					<img class="zoomimg" src="images/a7.jpg">
+					<img class="zoomimg" src="images/a7.jpg" alt="梅园剧场">
 				</div>
 
 			</div>
@@ -233,29 +238,29 @@
         <div class="wrap">
             <div class="row thin">
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/b1.jpg">
+                    <img class="zoomimg" src="images/b1.jpg" alt="梅园皇家食堂">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/b2.jpg">
+                    <img class="zoomimg" src="images/b2.jpg" alt="湖滨食堂">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/b3.jpg">
+                    <img class="zoomimg" src="images/b3.jpg" alt="湖滨食堂">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/b4.jpg">
+                    <img class="zoomimg" src="images/b4.jpg" alt="工学部四食堂">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/b5.png">
+                    <img class="zoomimg" src="images/b5.png" alt="桂园食堂">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/b6.jpg">
+                    <img class="zoomimg" src="images/b6.jpg" alt="工学部菜市场">
                 </div>
 
             </div>
         </div>
         <br/>
         <div class="moredetail" style="text-align: center;font-size: large;">
-            <p>梅 枫 樱 湖 工 信</p>
+            <p style="letter-spacing:0.5em; text-indent:0.5em;">梅枫樱湖工信医</p>
             <p>为你，尝遍千千万万</p>
         </div>
     </div>
@@ -265,25 +270,25 @@
         <div class="wrap">
             <div class="row thin">
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/c5.jpg">
+                    <img class="zoomimg" src="images/c5.jpg" alt="樱顶夕阳">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/c6.jpg">
+                    <img class="zoomimg" src="images/c6.jpg" alt="图书馆书柜">
                 </div>
                 <div class="col-m-4">
-                    <img class="zoomimg" src="images/c7.jpg">
+                    <img class="zoomimg" src="images/c7.jpg" alt="樱顶夕阳">
                 </div>
                 <div class="col-m-3">
-                    <img class="zoomimg" src="images/c1.jpg">
+                    <img class="zoomimg" src="images/c1.jpg" alt="图书馆书柜">
                 </div>
                 <div class="col-m-3">
-                    <img class="zoomimg" src="images/c2.jpg">
+                    <img class="zoomimg" src="images/c2.jpg" alt="樱顶">
                 </div>
                 <div class="col-m-3">
-                    <img class="zoomimg" src="images/c3.jpg">
+                    <img class="zoomimg" src="images/c3.jpg" alt="图书馆书柜">
                 </div>
                 <div class="col-m-3">
-                    <img class="zoomimg" src="images/c4.jpg">
+                    <img class="zoomimg" src="images/c4.jpg" alt="第五教学楼 人流">
                 </div>
             </div>
         </div>
@@ -298,7 +303,7 @@
     </div>
 </main>
 <footer style="display: none;">
-	<p class="footer">© 2018 Designed By <a href="#">'; DROP TABLE *; --</a> Framework By <a target="_blank" href="https://works.paugram.com/style/">Kico Style</a></p>
+	<p class="footer">© 2018 Designed By <a href="https://github.com/ExerciseBook/Zeor_WebDesigningCompetition/">'; DROP TABLE *; --</a> Framework By <a target="_blank" href="https://works.paugram.com/style/">Kico Style</a></p>
 </footer>
 </body>
 </html>
