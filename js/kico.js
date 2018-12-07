@@ -141,6 +141,7 @@ function Kico_Style () {
             obj.onclick = function () {
                 kico.image_single.src = obj.src;
 				kico.image_alt_content_tag.innerHTML=obj.alt;
+				kico.image_alt_div.classList.remove("remove");
                 if (!document.querySelector("body > .bk-image")) {
                     document.body.appendChild(kico.image_box);
                 }
