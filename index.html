@@ -44,7 +44,7 @@
 					duration: 2000,
 					delay: function(el, i) { return 200 + i * 100 },
 					direction: 'alternate',
-					loop: false
+					loop: true
 				});
 			}
 			else
@@ -61,6 +61,8 @@
 				$("#music-canvas").remove();
 				$("#music-audio").remove();
 			};
+			
+			ks.image(".zoomimg");
         });
 		
 		window.onload=function(){
@@ -100,7 +102,6 @@
 			} else {
 				initMaple();
 			}
-            ks.image(".zoomimg");
 		}
 	</script>
 </head>
