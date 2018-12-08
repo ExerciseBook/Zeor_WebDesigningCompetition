@@ -163,7 +163,7 @@ function initMaple() {
 	jQuery(function($) {
 		$(document).snowfall({
 			flakeCount : 30,
-			flakeIndex : "20000",
+			flakeIndex : "65",
 			minSize : 20,
 			maxSize : 35,
 			minSpeed : 1,
