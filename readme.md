@@ -45,8 +45,8 @@
 ### 图片资源
  - ![一只格格不入的猪](avatar/0.jpg) 一只格格不入的猪
  - ![XIN](avatar/1.jpg) XIN
- - ![XIN](avatar/2.jpg) syx
- - ![XIN](avatar/4.jpg) 庞七七
+ - ![syx](avatar/2.jpg) syx
+ - ![庞七七](avatar/4.jpg) 庞七七
  
 ## 鸣谢
 - ![luluxia](https://avatars4.githubusercontent.com/u/29321564?s=60&v=4) [luluxia 陆陆侠](https://llx.life/) 提供布局设计基础支持
